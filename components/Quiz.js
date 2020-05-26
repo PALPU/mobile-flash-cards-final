@@ -42,7 +42,7 @@ export class Quiz extends Component {
       return (
         <View style={styles.container}>
           <Text>
-            'There are No questions in the Quiz till now. Go back and add some
+            There are No questions in the Quiz till now. Go back and add some
             questions.
           </Text>
         </View>

@@ -61,7 +61,7 @@ export class NewCard extends Component {
             placeholder={"Write the correct answer!"}
           />
           <Button
-            disabled={this.ques === "" || this.ans === ""}
+            disabled={!(this.state.ques !== "" && this.state.ans !== "")}
             onPress={this.handleSubmit}
             txt={"Submit"}
           />

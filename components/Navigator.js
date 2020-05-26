@@ -10,7 +10,7 @@ import NewCard from "./NewCard";
 import DeckView from "./DeckView";
 import Deck from "./Deck";
 import Quiz from "./Quiz";
-import { black, darkGray, white } from "../constants";
+import { black, darkGray, white, purple } from "../constants";
 
 /**
  *  Navigation component to create navogation for the app
@@ -65,8 +65,9 @@ const Navigator = createStackNavigator({
     navigationOptions: {
       headerTintColor: white,
       headerStyle: {
-        backgroundColor: black,
+        backgroundColor: purple,
       },
+      title: "Deck",
       headerTitleStyle: { width: Dimensions.get("window").width },
     },
   },
@@ -77,7 +78,8 @@ const Navigator = createStackNavigator({
       headerStyle: {
         backgroundColor: black,
       },
-      headerTitleStyle: { width: Dimensions.get("window").width },
+      title: "Quiz",
+      headerTitleStyle: { justifyContent: "center", textAlign: "center" },
     },
   },
   NewCard: {
@@ -85,7 +87,7 @@ const Navigator = createStackNavigator({
     navigationOptions: {
       headerTintColor: white,
       headerStyle: {
-        backgroundColor: black,
+        backgroundColor: purple,
       },
       headerTitleStyle: { width: Dimensions.get("window").width },
     },

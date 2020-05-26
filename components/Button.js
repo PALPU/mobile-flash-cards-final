@@ -38,12 +38,10 @@ const styles = StyleSheet.create({
   },
   textBtn: {
     fontSize: 22,
-    fontWeight: "bold",
     color: white,
   },
   disabledBtnTxt: {
     fontSize: 22,
-    fontWeight: "normal",
     color: white,
     backgroundColor: gray,
   },
