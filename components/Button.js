@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
 import { white, black, purple, gray, darkGray } from "../constants";
 
 export default function Button(props) {
-  const { onPress, txt, disabled = true, styleBtn, styleTxt } = props;
+  const { onPress, txt, disabled = false, styleBtn, styleTxt } = props;
   const styleDisabledButton = disabled ? styles.disabledBtn : {};
   const styleDisabledButtonTxt = disabled ? styles.disabledBtnTxt : {};
   return (

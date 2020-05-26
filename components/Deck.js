@@ -18,7 +18,16 @@ export class Deck extends Component {
               })
             }
           />
-          <Button txt={"Start Quiz"} disabled={false} onPress={() => {}} />
+          <Button
+            txt={"Start Quiz"}
+            disabled={false}
+            onPress={() => {
+              //   clearNotifications().then(setReminder);
+              this.props.navigation.navigate("Quiz", {
+                name: this.props.name,
+              });
+            }}
+          />
         </View>
       </View>
     );

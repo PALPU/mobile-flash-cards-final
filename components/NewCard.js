@@ -33,9 +33,7 @@ export class NewCard extends Component {
     const { ques, ans, name } = this.state;
     const card = { ques, ans };
     addCardToDeck(name, card);
-    console.log("card added");
     this.props.dispatch(addCard(name, card));
-    console.log("card dispatched");
     this.setState(() => ({
       ques: "",
       ans: "",
@@ -68,9 +66,6 @@ export class NewCard extends Component {
             txt={"Submit"}
           />
         </View>
-        {/* <View>
-          <Text>{this.state.ques}</Text>
-        </View> */}
       </KeyboardAvoidingView>
     );
   }
@@ -89,7 +84,7 @@ const styles = StyleSheet.create({
     marginRight: 14,
     marginLeft: 14,
     marginBottom: 25,
-    marginTop: 15,
+    marginTop: 20,
   },
   textInput: {
     minHeight: 50,

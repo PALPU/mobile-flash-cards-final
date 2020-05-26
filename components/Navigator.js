@@ -9,6 +9,7 @@ import NewDeck from "./NewDeck";
 import NewCard from "./NewCard";
 import DeckView from "./DeckView";
 import Deck from "./Deck";
+import Quiz from "./Quiz";
 import { black, darkGray, white } from "../constants";
 
 /**
@@ -69,16 +70,16 @@ const Navigator = createStackNavigator({
       headerTitleStyle: { width: Dimensions.get("window").width },
     },
   },
-  // Quiz: {
-  //   screen: Quiz,
-  //   navigationOptions: {
-  //     headerTintColor: white,
-  //     headerStyle: {
-  //       backgroundColor: black,
-  //     },
-  //     headerTitleStyle: { width: Dimensions.get("window").width },
-  //   },
-  // },
+  Quiz: {
+    screen: Quiz,
+    navigationOptions: {
+      headerTintColor: white,
+      headerStyle: {
+        backgroundColor: black,
+      },
+      headerTitleStyle: { width: Dimensions.get("window").width },
+    },
+  },
   NewCard: {
     screen: NewCard,
     navigationOptions: {
