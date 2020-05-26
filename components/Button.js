@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
   disabledBtnTxt: {
     fontSize: 22,
     fontWeight: "normal",
-    color: gray,
+    color: white,
+    backgroundColor: gray,
   },
 });

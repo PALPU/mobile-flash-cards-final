@@ -21,11 +21,13 @@ export class Quiz extends Component {
         ...prevState,
         qN: prevState.qN + 1,
         score: prevState.score + 1,
+        showAnswer: false,
       }));
     } else {
       this.setState((prevState) => ({
         ...prevState,
         qN: prevState.qN + 1,
+        showAnswer: false,
       }));
     }
   };
@@ -74,9 +76,14 @@ export class Quiz extends Component {
               txt={this.state.showAnswer ? "Show Question" : "Show Answer"}
               onPress={() => this.toggle()}
             />
-            <Button txt={"Correct"} onPress={() => this.onSubmission(true)} />
+            <Button
+              txt={"Correct"}
+              disabled={!this.state.showAnswer}
+              onPress={() => this.onSubmission(true)}
+            />
             <Button
               txt={"InCorrect"}
+              disabled={!this.state.showAnswer}
               onPress={() => this.onSubmission(false)}
             />
           </View>

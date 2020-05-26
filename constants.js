@@ -12,3 +12,5 @@ export const textGray = "#666";
 export const purple = "purple";
 export const FLASHCARDS_STORAGE_KEY = "FlashCards";
 export const NOTIFICATIONS_STORAGE_KEY = "FlashCards:Notifications";
+export const gray = "gray";
+export const grey = "gray";
