@@ -32,10 +32,10 @@ This will open Expo Developer Tools in the browser. You can then do one of the f
 
 - Use an Android Emulator to run the app:
 
-yarn commands:
+yarn commands: [Emulator should be configured]
 
 - 'yarn android' [will create the bundle]
-- 'yarn start' [starts the app]
+- 'yarn start' [starts the app ]
 
 ## APP Sections:
 
