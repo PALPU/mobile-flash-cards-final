@@ -1,3 +1,7 @@
+/**
+ *  @description //this component returns a deck-card
+ */
+
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { white, red, textGray, black } from "../constants";
@@ -19,7 +23,7 @@ function DeckView(props) {
       <View>
         <Text
           style={styles.deckSize}
-        >{`${props.deck.cards.length} Quiz cards`}</Text>
+        >{`${props.deck.cards.length} Quiz card(s)`}</Text>
       </View>
     </View>
   );

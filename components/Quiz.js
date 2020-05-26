@@ -1,20 +1,36 @@
+/**
+ *  @description: this component renders the quiz in the App
+ */
+
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { View, Text, StyleSheet } from "react-native";
 import { purple } from "../constants";
 import Button from "./Button";
+
 export class Quiz extends Component {
+  /**
+   *  @description: state to store the current score, number of questions answered and whether to showing answer or not
+   */
   state = {
     score: 0,
     qN: 0,
     showAnswer: false,
   };
+
+  /**
+   *  @description: helps to toggle between question and answer
+   */
   toggle = () => {
     this.setState((prevState) => ({
       ...prevState,
       showAnswer: !prevState.showAnswer,
     }));
   };
+
+  /**
+   *  @description: called when correct or Incorrect button is clicked with the flag-true(if correct) or false(if incorrect)
+   */
   onSubmission = (flag) => {
     if (flag) {
       this.setState((prevState) => ({
@@ -31,12 +47,17 @@ export class Quiz extends Component {
       }));
     }
   };
+
+  /**
+   *  @description: resets the state so that quiz can be retaken
+   */
   retakeQuiz = () => {
-    this.setState({ score: 0, qN: 0 });
+    this.setState({ score: 0, qN: 0, showAnswer: false });
   };
+
   render() {
-    const { questions, answers, name } = this.props;
-    const { qN, score, showAnswer } = this.state;
+    const { questions, answers } = this.props;
+    const { qN, score } = this.state;
     const totalQues = questions.length;
     if (totalQues === 0) {
       return (

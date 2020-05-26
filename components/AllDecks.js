@@ -1,22 +1,22 @@
+/**
+ *  @description //this component lists all the decks on the homepage
+ */
+
 import React, { Component } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
+import { Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
 import { handleInitialData } from "../actions";
-//import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import DeckView from "./DeckView";
-import { lightGreen, green, orange, black } from "../constants";
+import { black } from "../constants";
+
 export class AllDecks extends Component {
   componentDidMount() {
     this.props.handleInitialData();
   }
+
   render() {
     const { decksList } = this.props;
+
     return (
       <ScrollView style={styles.container}>
         {console.log("decksList= ", decksList)}
@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     color: black,
   },
 });
+
 function mapStateToProps(state) {
   console.log("Inside mapStateToProps of AllDecks");
   return {

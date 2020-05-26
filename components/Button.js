@@ -1,3 +1,7 @@
+/**
+ *  @description this component gives a TouchableOpacity button to the App
+ */
+
 import React from "react";
 import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
 import { white, black, purple, gray, darkGray } from "../constants";

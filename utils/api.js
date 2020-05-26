@@ -9,6 +9,9 @@ function stringifyJson(data) {
   return JSON.stringify(data);
 }
 
+/**
+ *  @description //this function gets all the data from the storage and if no data is there gives the data from staticData.js file
+ */
 export async function getAllData() {
   try {
     const dataFromStorage = await AsyncStorage.getItem(FLASHCARDS_STORAGE_KEY);
@@ -22,6 +25,9 @@ export async function getAllData() {
     console.log("error while fetching all data: ", err);
   }
 }
+/**
+ *  @description //fetches all the cards of a deck
+ */
 export async function getCards(name) {
   try {
     const tempData = await AsyncStorage.getItem(FLASHCARDS_STORAGE_KEY);
@@ -30,6 +36,10 @@ export async function getCards(name) {
     console.log("error in fetching the cards of a deck", err);
   }
 }
+
+/**
+ *  @description //helps t add the new Deck
+ */
 export async function addDeckNameAPI(name) {
   try {
     await AsyncStorage.mergeItem(
@@ -45,26 +55,10 @@ export async function addDeckNameAPI(name) {
     console.log("error while merging a deck title to the storage: ", err);
   }
 }
-export async function deleteDeck(key) {
-  try {
-    const tempData = await AsyncStorage.getItem(FLASHCARDS_STORAGE_KEY);
-    const parsedData = jsonifyObject(tempData);
-    parsedData[key] = undefined;
-    delete parsedData[key];
-    AsyncStorage.setItem(FLASHCARDS_STORAGE_KEY, stringifyJson(parsedData));
-  } catch (err) {
-    console.log("error in deleting a deck", err);
-  }
-}
 
-export async function resetDecks() {
-  try {
-    await AsyncStorage.setItem(FLASHCARDS_STORAGE_KEY, stringifyJson(data));
-  } catch (err) {
-    console.log(err);
-  }
-}
-
+/**
+ *  @description //helps to add a new card
+ */
 export async function addCardToDeck(name, card) {
   try {
     const deck = await getCards(name);

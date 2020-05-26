@@ -1,3 +1,7 @@
+/**
+ * @description New Deck Component
+ */
+
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { connect } from "react-redux";
@@ -11,9 +15,17 @@ export class NewDeck extends Component {
     deckName: "",
   };
 
+  /**
+   *  @description: changes the state of the class on the change of text in the Input box
+   */
+
   onChangeText = (text) => {
     this.setState({ deckName: text });
   };
+
+  /**
+   *  @description: Thandles the click of Create Deck button on the new deck component
+   */
   onSubmission = () => {
     const { deckName } = this.state;
     addDeckNameAPI(deckName);
@@ -23,6 +35,7 @@ export class NewDeck extends Component {
       name: deckName,
     });
   };
+
   render() {
     return (
       <View style={styles.container}>
@@ -67,9 +80,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// function mapStateToProps() {
-//   return {
-//     addDeckName,
-//   };
-// }
 export default connect()(NewDeck);

@@ -5,14 +5,18 @@ import { NOTIFICATIONS_STORAGE_KEY } from "../constants";
 import { NOTIFICATIONS } from "expo-permissions";
 import { red } from "../constants";
 
-//this function removes all the scheduled notification
+/**
+ *  @description //this function removes all the scheduled notification
+ */
 export const clearLocalNotification = () => {
   return AsyncStorage.removeItem(NOTIFICATIONS_STORAGE_KEY).then(
     Notifications.cancelAllScheduledNotificationsAsync
   );
 };
 
-//returns the object of the notification
+/**
+ *  @returns the object having all the data for creating the notification
+ */
 function createNotificationObject() {
   return {
     title: "Study Reminder!!",
@@ -28,8 +32,9 @@ function createNotificationObject() {
     },
   };
 }
-
-//returns the object carrying the frequency of the notification
+/**
+ *  @returns the object carrying the frequency of the notification
+ */
 function getSchedule(day) {
   return {
     time: day,
@@ -37,9 +42,10 @@ function getSchedule(day) {
   };
 }
 
-// this is the function to set local notification
-
-export function addNotification() {
+/**
+ *  @description this is the function to set local notification
+ */
+export const addNotification = () => {
   AsyncStorage.getItem(NOTIFICATIONS_STORAGE_KEY)
     .then(JSON.parse)
     .then((res) => {
@@ -64,4 +70,4 @@ export function addNotification() {
         });
       }
     });
-}
+};

@@ -1,4 +1,3 @@
-import { Dimensions } from "react-native";
 import {
   createStackNavigator,
   createMaterialTopTabNavigator,
@@ -7,17 +6,12 @@ import {
 import AllDecks from "./AllDecks";
 import NewDeck from "./NewDeck";
 import NewCard from "./NewCard";
-import DeckView from "./DeckView";
 import Deck from "./Deck";
 import Quiz from "./Quiz";
-import { black, darkGray, white, purple } from "../constants";
+import { darkGray, white, purple } from "../constants";
 
 /**
- *  Navigation component to create navogation for the app
- */
-
-/**
- *  Main Tabs to navigate to AllDecksView of AddDeck view
+ *  @description: Top-Tab Navigator
  */
 
 const Tabs = createMaterialTopTabNavigator(
@@ -40,17 +34,18 @@ const Tabs = createMaterialTopTabNavigator(
       header: null,
     },
     tabBarOptions: {
-      activeTintColor: white,
+      activeTintColor: purple,
       style: {
         height: 60,
         backgroundColor: darkGray,
+        paddingTop: 5,
       },
     },
   }
 );
 
 /**
- *  Stack Navigator
+ *  @description: Stack Navigator
  */
 
 const Navigator = createStackNavigator({
@@ -68,7 +63,12 @@ const Navigator = createStackNavigator({
         backgroundColor: purple,
       },
       title: "Deck",
-      headerTitleStyle: { width: Dimensions.get("window").width },
+      headerTitleStyle: {
+        justifyContent: "center",
+        textAlign: "center",
+        fontWeight: "bold",
+        fontSize: 30,
+      },
     },
   },
   Quiz: {
@@ -76,10 +76,15 @@ const Navigator = createStackNavigator({
     navigationOptions: {
       headerTintColor: white,
       headerStyle: {
-        backgroundColor: black,
+        backgroundColor: purple,
       },
       title: "Quiz",
-      headerTitleStyle: { justifyContent: "center", textAlign: "center" },
+      headerTitleStyle: {
+        justifyContent: "center",
+        textAlign: "center",
+        fontWeight: "bold",
+        fontSize: 30,
+      },
     },
   },
   NewCard: {
@@ -90,7 +95,12 @@ const Navigator = createStackNavigator({
         backgroundColor: purple,
       },
       title: "New Card",
-      headerTitleStyle: { width: Dimensions.get("window").width },
+      headerTitleStyle: {
+        justifyContent: "center",
+        textAlign: "center",
+        fontWeight: "bold",
+        fontSize: 30,
+      },
     },
   },
 });

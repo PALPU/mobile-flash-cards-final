@@ -1,8 +1,17 @@
+/**
+ * @description Deck Component which shows the deck-card with 2 buttons
+ */
+
 import React, { Component } from "react";
 import { View, StyleSheet } from "react-native";
 import Button from "./Button";
 import { connect } from "react-redux";
 import DeckView from "./DeckView";
+import {
+  clearLocalNotification,
+  addNotification,
+} from "../utils/notifications";
+
 export class Deck extends Component {
   render() {
     return (
@@ -22,7 +31,7 @@ export class Deck extends Component {
             txt={"Start Quiz"}
             disabled={false}
             onPress={() => {
-              //   clearNotifications().then(setReminder);
+              clearLocalNotification().then(addNotification);
               this.props.navigation.navigate("Quiz", {
                 name: this.props.name,
               });

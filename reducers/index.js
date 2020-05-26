@@ -1,12 +1,8 @@
-import {
-  RECEIVE_ALL_DATA,
-  ADD_CARD,
-  ADD_DECK_NAME,
-  RESET_DATA,
-  DELETE_DECK,
-} from "../actions";
+/**
+ *  @description: creating reducers
+ */
 
-import { data } from "../utils/staticData";
+import { RECEIVE_ALL_DATA, ADD_CARD, ADD_DECK_NAME } from "../actions";
 
 export default function decks(state = {}, action) {
   switch (action.type) {
@@ -33,16 +29,6 @@ export default function decks(state = {}, action) {
           cards: [],
         },
       };
-    }
-    case DELETE_DECK: {
-      const {
-        [action.name]: {},
-        ...newState
-      } = state;
-      return newState;
-    }
-    case RESET_DATA: {
-      return data;
     }
     default: {
       return state;

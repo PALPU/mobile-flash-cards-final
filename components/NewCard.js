@@ -1,3 +1,7 @@
+/**
+ *  @description //New Card Component to add a new card to a deck
+ */
+
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
@@ -12,23 +16,37 @@ import { addCard } from "../actions";
 import { addCardToDeck } from "../utils/api";
 
 export class NewCard extends Component {
+  /**
+   *  @description state to determine whether question and answer input box changes or not
+   */
   state = {
     ques: "",
     ans: "",
     name: this.props.name,
   };
+
+  /**
+   *  @description this function is called to handle the change of text in the question Input box
+   */
   handleQuesChange = (value) => {
     console.log(value);
     this.setState({
       ques: value,
     });
   };
+
+  /**
+   *  @description this function is called to handle the change of text in the answer Input box
+   */
   handleAnsChange = (value) => {
     console.log(value);
     this.setState({
       ans: value,
     });
   };
+  /**
+   *  @description handles the submission of the newCard
+   */
   handleSubmit = () => {
     const { ques, ans, name } = this.state;
     const card = { ques, ans };
@@ -104,7 +122,7 @@ function mapStateToProps(state, { navigation }) {
   const { name } = navigation.state.params;
   return {
     name,
-    backView: () => navigation.goBack(),
+    backView: () => navigation.goBack(), //helps to propagate back to the deck
   };
 }
 export default connect(mapStateToProps)(NewCard);

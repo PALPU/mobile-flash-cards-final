@@ -1,3 +1,7 @@
+/**
+ *  @description: staticData for the starting of the app
+ */
+
 export const data = {
   Udacity: {
     name: "Udacity",
