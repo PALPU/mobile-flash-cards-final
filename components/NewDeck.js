@@ -1,19 +1,75 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { connect } from "react-redux";
+import { lightGreen, black } from "../constants";
+import { TextInput } from "react-native-gesture-handler";
+import Button from "./Button";
+import { addDeckNameAPI } from "../utils/api";
 import { addDeckName } from "../actions";
 export class NewDeck extends Component {
+  state = {
+    deckName: "",
+  };
+
+  onChangeText = (text) => {
+    this.setState({ deckName: text });
+  };
+  onSubmission = () => {
+    const { deckName } = this.state;
+    addDeckNameAPI(deckName);
+    this.props.dispatch(addDeckName(deckName));
+    this.setState({ deckName: "" });
+    this.props.navigation.navigate("Deck", {
+      name: deckName,
+    });
+  };
   render() {
     return (
-      <View>
-        <Text>New Deck</Text>
+      <View style={styles.container}>
+        <Text style={styles.header}>Enter New Deck Name in the input box</Text>
+        <TextInput
+          style={styles.inputTxt}
+          placeholder={"Enter the Deck Name"}
+          value={this.state.deckName}
+          onChangeText={(text) => this.onChangeText(text)}
+        />
+        <View>
+          <Button
+            txt={"Create Deck"}
+            disabled={this.state.deckName === ""}
+            onPress={this.onSubmission}
+          />
+        </View>
       </View>
     );
   }
 }
-function mapStateToProps() {
-  return {
-    addDeckName,
-  };
-}
-export default connect(mapStateToProps)(NewDeck);
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    margin: 10,
+    padding: 6,
+    backgroundColor: lightGreen,
+  },
+  header: {
+    margin: 8,
+    alignSelf: "center",
+    textAlign: "center",
+    fontSize: 30,
+  },
+  inputTxt: {
+    borderRadius: 4,
+    fontSize: 25,
+    borderWidth: 3,
+    borderColor: black,
+    margin: 10,
+    padding: 5,
+  },
+});
+
+// function mapStateToProps() {
+//   return {
+//     addDeckName,
+//   };
+// }
+export default connect()(NewDeck);

@@ -93,7 +93,7 @@ export class Quiz extends Component {
           </Text>
         </View>
         <View style={styles.btn}>
-          <Button txt={"Re-take"} onPress={() => this.retakeQuiz()} />
+          <Button txt={"Restart Quiz"} onPress={() => this.retakeQuiz()} />
           <Button txt={"Back to deck"} onPress={() => this.props.goBack()} />
         </View>
       </View>

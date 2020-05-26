@@ -30,7 +30,7 @@ export async function getCards(name) {
     console.log("error in fetching the cards of a deck", err);
   }
 }
-export async function addDeckName(name) {
+export async function addDeckNameAPI(name) {
   try {
     await AsyncStorage.mergeItem(
       FLASHCARDS_STORAGE_KEY,
