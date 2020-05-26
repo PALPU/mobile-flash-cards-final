@@ -37,6 +37,16 @@ yarn commands:
 - 'yarn android' [will create the bundle]
 - 'yarn start' [starts the app]
 
+## APP Sections:
+
+The home page has two tabs:
+
+- ALL Decks [shows the list of all the decks with its important details]
+
+  - Deck [shows the deck detail and gives the options to add a new question and take the quiz]
+
+- New Deck [gives the option to add a new deck to the list of deck]
+
 ## Testing done on platforms:
 
 This project has been tested on the following platforms:
