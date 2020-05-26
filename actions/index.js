@@ -30,8 +30,8 @@ export function deleteDeck(name) {
 export function addCard(name, card) {
   return {
     type: ADD_CARD,
-    name,
-    card,
+    name: name,
+    card: card,
   };
 }
 

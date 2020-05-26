@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet,ScrollView, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { connect } from "react-redux";
 import { handleInitialData } from "../actions";
 //import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
@@ -17,8 +23,14 @@ export class AllDecks extends Component {
         <Text style={styles.heading}>Mobile FlashCards</Text>
         {Object.values(decksList).map((deck, index) => {
           return (
-            <TouchableOpacity key={index}>
-              {console.log("name= ", deck.name)}
+            <TouchableOpacity
+              key={index}
+              onPress={() =>
+                this.props.navigation.navigate("Deck", {
+                  name: deck.name,
+                })
+              }
+            >
               <DeckView name={deck.name} />
             </TouchableOpacity>
           );
@@ -30,11 +42,10 @@ export class AllDecks extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: "#5BD2A4",
     backgroundColor: "#d15c63",
   },
   heading: {
-    fontSize: 40,
+    fontSize: 36,
     textAlign: "center",
     color: black,
   },

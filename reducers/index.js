@@ -20,8 +20,8 @@ export default function decks(state = {}, action) {
       return {
         ...state,
         [action.name]: {
-          ...state[name],
-          cards: [...state[name].cards].concat(card),
+          ...state[action.name],
+          cards: [...state[action.name].cards].concat(action.card),
         },
       };
     }
@@ -29,7 +29,7 @@ export default function decks(state = {}, action) {
       return {
         ...state,
         [action.name]: {
-          name,
+          name: action.name,
           cards: [],
         },
       };

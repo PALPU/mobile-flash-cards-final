@@ -1,4 +1,4 @@
-// import { Dimensions } from "react-native";
+import { Dimensions } from "react-native";
 import {
   createStackNavigator,
   createMaterialTopTabNavigator,
@@ -6,8 +6,9 @@ import {
 } from "react-navigation";
 import AllDecks from "./AllDecks";
 import NewDeck from "./NewDeck";
-// import NewCard from "./NewCard";
+import NewCard from "./NewCard";
 import DeckView from "./DeckView";
+import Deck from "./Deck";
 import { black, darkGray, white } from "../constants";
 
 /**
@@ -20,10 +21,10 @@ import { black, darkGray, white } from "../constants";
 
 const Tabs = createMaterialTopTabNavigator(
   {
-    Decks: {
+    AllDecks: {
       screen: AllDecks,
       navigationOptions: {
-        tabBarLabel: "Decks",
+        tabBarLabel: "All Decks",
       },
     },
     NewDeck: {
@@ -58,36 +59,36 @@ const Navigator = createStackNavigator({
       header: null,
     },
   },
-  DeckView: {
-    screen: DeckView,
+  Deck: {
+    screen: Deck,
     navigationOptions: {
       headerTintColor: white,
       headerStyle: {
-        backgroundColor: darkGray,
+        backgroundColor: black,
       },
-      headerTitleStyle: { width: 100 },
+      headerTitleStyle: { width: Dimensions.get("window").width },
     },
   },
-  //   QuizView: {
-  //     screen: QuizView,
-  //     navigationOptions: {
-  //       headerTintColor: white,
-  //       headerStyle: {
-  //         backgroundColor: black,
-  //       },
-  //       headerTitleStyle: { width: Dimensions.get("window").width },
+  // Quiz: {
+  //   screen: Quiz,
+  //   navigationOptions: {
+  //     headerTintColor: white,
+  //     headerStyle: {
+  //       backgroundColor: black,
   //     },
+  //     headerTitleStyle: { width: Dimensions.get("window").width },
   //   },
-  //   AddCard: {
-  //     screen: NewCard,
-  //     navigationOptions: {
-  //       headerTintColor: white,
-  //       headerStyle: {
-  //         backgroundColor: darkGray,
-  //       },
-  //       headerTitleStyle: { width: Dimensions.get("window").width },
-  //     },
-  //   },
+  // },
+  NewCard: {
+    screen: NewCard,
+    navigationOptions: {
+      headerTintColor: white,
+      headerStyle: {
+        backgroundColor: black,
+      },
+      headerTitleStyle: { width: Dimensions.get("window").width },
+    },
+  },
 });
 
 export default createAppContainer(Navigator);
