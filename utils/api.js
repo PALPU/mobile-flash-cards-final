@@ -10,7 +10,8 @@ function stringifyJson(data) {
 }
 
 /**
- *  @description //this function gets all the data from the storage and if no data is there gives the data from staticData.js file
+ *  @description :this function gets all the data from the storage and if no data is there gives the data from staticData.js file
+ *  @returns     : full data oject
  */
 export async function getAllData() {
   try {
@@ -27,6 +28,7 @@ export async function getAllData() {
 }
 /**
  *  @description //fetches all the cards of a deck
+ *  @returns     // data object of a particular deck
  */
 export async function getCards(name) {
   try {
@@ -38,7 +40,7 @@ export async function getCards(name) {
 }
 
 /**
- *  @description //helps t add the new Deck
+ *  @description //helps to add the new Deck
  */
 export async function addDeckNameAPI(name) {
   try {

@@ -1,3 +1,6 @@
+/**
+ *  @description describes the type of action that a reducer can take
+ */
 import { getAllData } from "../utils/api";
 
 export const RECEIVE_ALL_DATA = "RECEIVE_ALL_DATA";
@@ -10,14 +13,20 @@ export function receiveAllData(data) {
     data,
   };
 }
-
+/**
+ *  @returns :object of a deck
+ *  @param  :name of the deck
+ */
 export function addDeckName(name) {
   return {
     type: ADD_DECK_NAME,
     name,
   };
 }
-
+/**
+ *  @returns :object of a card
+ *  @param  :name of the deck and object of a card
+ */
 export function addCard(name, card) {
   return {
     type: ADD_CARD,
@@ -25,6 +34,11 @@ export function addCard(name, card) {
     card: card,
   };
 }
+
+/**
+ *  @returns :a function with dispatch as aparameter
+ *
+ */
 
 export function handleInitialData() {
   return (dispatch) => {
