@@ -89,6 +89,7 @@ const Navigator = createStackNavigator({
       headerStyle: {
         backgroundColor: purple,
       },
+      title: "New Card",
       headerTitleStyle: { width: Dimensions.get("window").width },
     },
   },
