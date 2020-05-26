@@ -1,3 +1,8 @@
+/**
+ *  @description: creates the navigator for the whole app
+ *  @returns    : A container having the stack navigator
+ */
+
 import {
   createStackNavigator,
   createMaterialTopTabNavigator,

@@ -26,7 +26,8 @@ export class NewCard extends Component {
   };
 
   /**
-   *  @description this function is called to handle the change of text in the question Input box
+   *  @description :this function is called to handle the change of text in the question Input box
+   *  @params      :the changed Question text
    */
   handleQuesChange = (value) => {
     console.log(value);
@@ -37,6 +38,7 @@ export class NewCard extends Component {
 
   /**
    *  @description this function is called to handle the change of text in the answer Input box
+   *  @params      :the changed answer text
    */
   handleAnsChange = (value) => {
     console.log(value);

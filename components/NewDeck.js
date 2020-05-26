@@ -16,7 +16,8 @@ export class NewDeck extends Component {
   };
 
   /**
-   *  @description: changes the state of the class on the change of text in the Input box
+   *  @description :changes the state of the class on the change of text in the Input box
+   *  @params      : the dynamic changing text
    */
 
   onChangeText = (text) => {

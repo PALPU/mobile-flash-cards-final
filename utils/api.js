@@ -29,6 +29,7 @@ export async function getAllData() {
 /**
  *  @description //fetches all the cards of a deck
  *  @returns     // data object of a particular deck
+ *  @param      //  name of the deck
  */
 export async function getCards(name) {
   try {
@@ -41,6 +42,7 @@ export async function getCards(name) {
 
 /**
  *  @description //helps to add the new Deck
+ *  @param      // name of the deck
  */
 export async function addDeckNameAPI(name) {
   try {
@@ -60,6 +62,7 @@ export async function addDeckNameAPI(name) {
 
 /**
  *  @description //helps to add a new card
+ *  @param      // name of the deck and the new question answer object card
  */
 export async function addCardToDeck(name, card) {
   try {

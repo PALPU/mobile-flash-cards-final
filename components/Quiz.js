@@ -29,7 +29,8 @@ export class Quiz extends Component {
   };
 
   /**
-   *  @description: called when correct or Incorrect button is clicked with the flag-true(if correct) or false(if incorrect)
+   *  @description :called when correct or Incorrect button is clicked with the flag-true(if correct) or false(if incorrect)
+   *  @params      :flag which is true or false
    */
   onSubmission = (flag) => {
     if (flag) {
@@ -116,7 +117,7 @@ export class Quiz extends Component {
           <Text>Your Quiz is over!!</Text>
         </View>
         <View>
-          <Text>
+          <Text style={styles.score}>
             Your Score is {score}/{totalQues}.
           </Text>
         </View>
@@ -158,6 +159,9 @@ const styles = StyleSheet.create({
   },
   btn: {
     marginTop: 100,
+  },
+  score: {
+    fontSize: 20,
   },
 });
 

@@ -1,22 +1,20 @@
 /**
- *  @description //this component returns a deck-card
+ *  @description //this is a functional component
+ * @returns :a deck-card
  */
 
-import React, { Component } from "react";
+import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { white, red, textGray, black } from "../constants";
+import { white, black } from "../constants";
 import { connect } from "react-redux";
 
 function DeckView(props) {
   console.log("props in class= ", props);
   if (props.deck === undefined) {
-    console.log("undefined inside");
     return <View />;
   }
   return (
     <View style={styles.container}>
-      {console.log("Inside name= ", props.deck.name)}
-      {console.log("Inside cards length= ", props.deck.cards.length)}
       <View>
         <Text style={styles.deckName}>{props.deck.name}</Text>
       </View>
