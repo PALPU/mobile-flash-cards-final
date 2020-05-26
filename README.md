@@ -12,7 +12,7 @@ Clone the repository, change directories, and use 'yarn install' to install the 
 
 ```bash
 $ git clone <repo_name>
-$ cd mobile-flash-cards-final
+$ cd mobile-flash-cards
 $ yarn		[will install all the dependencies]
 ```
 
