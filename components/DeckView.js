@@ -29,6 +29,9 @@ function DeckView(props) {
   );
 }
 
+/**
+ *  @description: styles object to give style to the components
+ */
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",

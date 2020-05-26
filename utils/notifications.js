@@ -7,6 +7,7 @@ import { red } from "../constants";
 
 /**
  *  @description //this function removes all the scheduled notification
+ *  @returns    //Notifications.cancelAllScheduledNotificationsAsync
  */
 export const clearLocalNotification = () => {
   return AsyncStorage.removeItem(NOTIFICATIONS_STORAGE_KEY).then(

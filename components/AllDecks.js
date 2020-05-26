@@ -39,6 +39,10 @@ export class AllDecks extends Component {
     );
   }
 }
+
+/**
+ *  @description: styles object to give style to the components
+ */
 const styles = StyleSheet.create({
   container: {
     flex: 1,

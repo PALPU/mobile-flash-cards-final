@@ -24,7 +24,9 @@ export default function Button(props) {
     </View>
   );
 }
-
+/**
+ *  @description: styles object to give style to the components
+ */
 const styles = StyleSheet.create({
   btn: {
     width: 200,
